@@ -25,13 +25,13 @@ const App = () => {
         <CssBaseline />
         {!signUp && (
           <SignIn
-            onClickSignIn={executeSignIn}
+            onSubmit={executeSignIn}
             changeSignUp={() => setSignUp((prev) => !prev)}
           />
         )}
         {signUp && (
           <SignUp
-            onClickSignUp={executeSignUp}
+            onSubmit={executeSignUp}
             changeSignIn={() => setSignUp((prev) => !prev)}
           />
         )}

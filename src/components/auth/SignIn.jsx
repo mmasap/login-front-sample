@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SignIn = ({ onClickSignIn, changeSignUp }) => {
+const SignIn = ({ onSubmit, changeSignUp }) => {
   const classes = useStyles();
 
   return (
@@ -36,7 +36,7 @@ const SignIn = ({ onClickSignIn, changeSignUp }) => {
       <Typography component='h1' variant='h5'>
         Sign in
       </Typography>
-      <form className={classes.form} noValidate>
+      <form className={classes.form} onSubmit={onSubmit} noValidate>
         <TextField
           variant='outlined'
           margin='normal'
@@ -69,27 +69,26 @@ const SignIn = ({ onClickSignIn, changeSignUp }) => {
           variant='contained'
           color='primary'
           className={classes.submit}
-          onClick={onClickSignIn}
         >
           Sign In
         </Button>
-        <Grid container>
-          <Grid item xs>
-            <Link
-              component='button'
-              variant='body2'
-              onClick={(e) => e.preventDefault()}
-            >
-              Forgot password?
-            </Link>
-          </Grid>
-          <Grid item>
-            <Link component='button' variant='body2' onClick={changeSignUp}>
-              {"Don't have an account? Sign Up"}
-            </Link>
-          </Grid>
-        </Grid>
       </form>
+      <Grid container>
+        <Grid item xs>
+          <Link
+            component='button'
+            variant='body2'
+            onClick={(e) => e.preventDefault()}
+          >
+            Forgot password?
+          </Link>
+        </Grid>
+        <Grid item>
+          <Link component='button' variant='body2' onClick={changeSignUp}>
+            {"Don't have an account? Sign Up"}
+          </Link>
+        </Grid>
+      </Grid>
     </div>
   );
 };
