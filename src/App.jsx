@@ -6,7 +6,7 @@ import Main from 'components/content/Main';
 import Footer from './components/common/Footer';
 
 const App = () => {
-  const [auth, setAuth] = useState(false);
+  const [auth, setAuth] = useState(true);
   const [signUp, setSignUp] = useState(false);
 
   const executeSignIn = (e) => {
